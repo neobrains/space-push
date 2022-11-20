@@ -1,5 +1,5 @@
-name: Push to Deta Space
-description: A GitHub Action to push to Space
+name: "Push to Deta Space"
+description: "A GitHub Action to push to Space"
 
 inputs:
   space-access-token:
@@ -11,15 +11,14 @@ inputs:
 
 runs:
   using: "composite"
-  runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Push to Space
-        shell: bash
-        run: |
-          export SPACE_ACCESS_TOKEN=${{ inputs.space-access-token }}
-          export SPACE_PROJECT_ID=${{ inputs.space-project-id }}
-          ./blackmagic
+  steps:
+    - uses: actions/checkout@v3
+    - name: Push to Space
+      shell: bash
+      run: |
+        export SPACE_ACCESS_TOKEN=${{ inputs.space-access-token }}
+        export SPACE_PROJECT_ID=${{ inputs.space-project-id }}
+        ./blackmagic
 
 branding:
   icon: check-circle

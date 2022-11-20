@@ -1,7 +1,7 @@
 # SpacePush
 
 ```bash
-name: Deploy to Deta
+name: Push to Space
 on: push
 
 jobs:
