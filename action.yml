@@ -18,7 +18,7 @@ runs:
       run: |
         export SPACE_ACCESS_TOKEN=${{ inputs.space-access-token }}
         export SPACE_PROJECT_ID=${{ inputs.space-project-id }}
-        ./blackmagic
+        ./main
 
 branding:
   icon: check-circle

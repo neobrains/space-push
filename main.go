@@ -27,9 +27,9 @@ func main() {
 		fmt.Println("panic: set `SPACE_PROJECT_ID` in environment")
 		os.Exit(1)
 	}
-	root := os.Getenv("HOME") + "/.detaspace"
-	os.OpenFile(fmt.Sprintf("%s/space_tokens", root), os.O_CREATE|os.O_WRONLY, 0777)
-	os.WriteFile(fmt.Sprintf("%s/space_tokens", root), []byte(fmt.Sprintf(`{"access_token":"%s"}`, SPACE_ACCESS_TOKEN)), 0777)
+	//root := os.Getenv("HOME") + "/.detaspace"
+	//os.OpenFile(fmt.Sprintf("%s/space_tokens", root), os.O_CREATE|os.O_WRONLY, 0777)
+	//os.WriteFile(fmt.Sprintf("%s/space_tokens", root), []byte(fmt.Sprintf(`{"access_token":"%s"}`, SPACE_ACCESS_TOKEN)), 0777)
 	cmd = exec.Command(bin, "link", fmt.Sprintf("--id=%s", SPACE_PROJECT_ID))
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
