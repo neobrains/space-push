@@ -31,6 +31,12 @@ func main() {
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	cmd.Run()
+	if _, err := os.Stat(".spaceignore"); os.IsNotExist(err) {
+		os.Create(".spaceignore")
+	}
+	f, _ := os.OpenFile(".spaceignore", os.O_APPEND|os.O_WRONLY, 0777)
+	f.WriteString("deploy.go")
+	f.WriteString("deploy")
 	cmd = exec.Command(bin, "push")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
