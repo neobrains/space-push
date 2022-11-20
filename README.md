@@ -1,7 +1,7 @@
 # Space Push: Github Action
 
 ## Usage
-Push [Deta Space](https://alpha.deta.space/)using GitHub actions
+Continuous delivery of [Deta Space Apps](https://alpha.deta.space/)
 
 ## Inputs
 ### `space-access-token`
@@ -12,7 +12,8 @@ Used to link current repo with space app. To get your project id go to the [Buil
 <br/><br/>
 ⚠️ Use [GitHub Actions Secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets) to store your inputs ⚠️
 
-## Sample workflow
+## Sample Workflow
+`push.yml`
 ```bash
 name: Push to Space
 on: push
@@ -29,3 +30,5 @@ jobs:
 ```
 
 Release needs human interaction to be created, thus it is not possible to create a release using GitHub actions at this moment. Follow the instructions [here](https://alpha.deta.space/docs/en/basics/releases#releasing-from-the-gui) to create a release for your project.
+
+##### ** Special thanks to [Sponge](https://github.com/rohanshiva) & [sub-G](https://github.com/mikBighne98)
