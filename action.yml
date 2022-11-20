@@ -19,7 +19,7 @@ runs:
     - name: CI Build
       shell: bash
       run: |
-        go mod init github.com/jnsougata/push-to-deta-space
+        go mod init push-to-deta-space
         go build main.go
     - name: Push to Space
       shell: script -q -e -c "bash {0}"
