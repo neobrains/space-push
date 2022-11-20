@@ -1,0 +1,15 @@
+name: Deploy to Space
+on: [push, workflow_dispatch]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: The master step
+        env:
+          SPACE_ACCESS_TOKEN: ${{ secrets.SPACE_ACCESS_TOKEN }}
+          SPACE_APP_ID: ${{ secrets.SPACE_APP_ID }}
+        shell: bash
+        run: |
+          ./blackmagic
