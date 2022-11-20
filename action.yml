@@ -1,4 +1,4 @@
-name: Deploy to Space
+name: Push to Space
 description: A GitHub Action to push to Space
 on: [push, workflow_dispatch]
 
