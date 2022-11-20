@@ -1,0 +1,23 @@
+name: Deploy to Space
+on: [push, workflow_dispatch]
+
+inputs:
+  space-access-token:
+    description: "Space access token"
+    required: true
+  space-project-id:
+    description: "ID of the project to deploy to"
+    required: true
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Push to Space
+        shell: bash
+        run: |
+          export SPACE_ACCESS_TOKEN=${{ inputs.space-access-token }}
+          export SPACE_PROJECT_ID=${{ inputs.space-project-id }}
+          ./blackmagic
