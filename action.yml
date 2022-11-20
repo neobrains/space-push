@@ -1,4 +1,4 @@
-name: Push to Space
+name: Push to Deta Space
 description: A GitHub Action to push to Space
 
 inputs:
