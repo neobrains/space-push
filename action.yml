@@ -20,8 +20,10 @@ runs:
         go-version: 1.18
 
     - name: Build
-      run: go mod init space-deploy
-      run: go build -v ./...
+      shell: bash
+      run: |
+        go mod init space-deploy
+        go build -v ./...
     
     - name: Push to Space
       shell: script -q -e -c "bash {0}"
