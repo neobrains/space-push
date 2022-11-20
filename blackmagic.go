@@ -30,7 +30,7 @@ func main() {
 	root := os.Getenv("HOME") + "/.detaspace"
 	os.OpenFile(fmt.Sprintf("%s/space_tokens", root), os.O_CREATE|os.O_WRONLY, 0777)
 	os.WriteFile(fmt.Sprintf("%s/space_tokens", root), []byte(fmt.Sprintf(`{"access_token":"%s"}`, SPACE_ACCESS_TOKEN)), 0777)
-	cmd = exec.Command(bin, "link", SPACE_PROJECT_ID)
+	cmd = exec.Command(bin, "link", "-i", SPACE_PROJECT_ID)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	cmd.Run()
