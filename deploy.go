@@ -35,8 +35,8 @@ func main() {
 		os.Create(".spaceignore")
 	}
 	f, _ := os.OpenFile(".spaceignore", os.O_APPEND|os.O_WRONLY, 0777)
-	f.WriteString("deploy.go\n")
-	f.WriteString("deploy\n")
+	f.WriteString("\ndeploy.go\n")
+	f.WriteString("\ndeploy\n")
 	cmd = exec.Command(bin, "push")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
