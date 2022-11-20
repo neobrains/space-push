@@ -34,12 +34,6 @@ func main() {
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	cmd.Run()
-	cmd = exec.Command(bin, "validate")
-	e := cmd.Run()
-	if e != nil {
-		fmt.Println("panic: failed to validate SpaceFile")
-		os.Exit(1)
-	}
 	cmd = exec.Command(bin, "push")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
