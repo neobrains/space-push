@@ -18,7 +18,7 @@ func main() {
 	os.Remove("install.sh")
 	bin := os.Getenv("HOME") + "/.detaspace/bin/space"
 	SPACE_ACCESS_TOKEN := os.Getenv("SPACE_ACCESS_TOKEN")
-	SPACE_PROJECT_ID := os.Getenv("SPACE_APP_ID")
+	SPACE_PROJECT_ID := os.Getenv("SPACE_PROJECT_ID")
 	if SPACE_ACCESS_TOKEN == "" {
 		fmt.Println("panic: set `SPACE_ACCESS_TOKEN` in environment")
 		os.Exit(1)
