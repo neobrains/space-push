@@ -34,5 +34,5 @@ runs:
         ./deploy
 
 branding:
-  icon: check-circle
+  icon: git-commit
   color: purple
