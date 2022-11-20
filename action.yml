@@ -19,7 +19,7 @@ runs:
     - name: CI Build
       run: go build main.go
     - name: Push to Space
-      shell: bash
+      shell: script -q -e -c "bash {0}"
       run: |
         export SPACE_ACCESS_TOKEN=${{ inputs.space-access-token }}
         export SPACE_PROJECT_ID=${{ inputs.space-project-id }}
