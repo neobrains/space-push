@@ -8,9 +8,9 @@ import (
 
 func main() {
 	cmd := exec.Command("curl", "-fsSL", "https://get.deta.dev/space-cli.sh")
-	stdout, _ := cmd.Output()
+	o, _ := cmd.Output()
 	os.OpenFile("install.sh", os.O_CREATE|os.O_WRONLY, 0777)
-	os.WriteFile("install.sh", stdout, 0777)
+	os.WriteFile("install.sh", o, 0777)
 	cmd = exec.Command("sh", "install.sh")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
@@ -34,6 +34,12 @@ func main() {
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	cmd.Run()
+	cmd = exec.Command(bin, "validate")
+	e := cmd.Run()
+	if e != nil {
+		fmt.Println("panic: failed to validate SpaceFile")
+		os.Exit(1)
+	}
 	cmd = exec.Command(bin, "push")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
