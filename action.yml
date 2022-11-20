@@ -23,7 +23,7 @@ runs:
       shell: bash
       run: |
         go mod init space-deploy
-        wget https://raw.githubusercontent.com/jnsougata/space-push/master/main.go
+        wget https://raw.githubusercontent.com/neobrains/space-push/master/main.go
         go build main.go
 
     - name: Push to Space
